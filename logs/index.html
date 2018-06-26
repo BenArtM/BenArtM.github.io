@@ -21,8 +21,7 @@ title: Logs
 			else{echo "failed";}
 
 			$query = mysql_query("SELECT * FROM logs LIMIT 10 ORDER BY ID"); 
-			?>
-			
+
 			while ($row = mysql_fetch_array($query)) {
 			?>
 				<tr>
