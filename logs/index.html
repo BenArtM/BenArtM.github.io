@@ -7,28 +7,29 @@ title: Logs
 		<p>Uhh..... buat tabel gimana ya Cent? <br></br>
 		Untuk mem-populate tabel ga bisa dari plain .txt
 		<table>
+       			<tr>
+				<td>ID</td>
+				<td>name</td>
+				<td>cassusBelli</td>
+			</tr>
+			
+			<?php
+			$connect = mysql_connect("localhost", "benart", "secura","secura"); 
+			if ($connect != null) {
+				echo "connected";
+				}
+			else{echo "failed";}
 
-		<table id="t01">
-		  <tr>
-		    <th>Firstname</th>
-		    <th>Lastname</th> 
-		    <th>Age</th>
-		  </tr>
-		  <tr>
-		    <td>Jill</td>
-		    <td>Smith</td>
-		    <td>50</td>
-		  </tr>
-		  <tr>
-		    <td>Eve</td>
-		    <td>Jackson</td>
-		    <td>94</td>
-		  </tr>
-		  <tr>
-		    <td>John</td>
-		    <td>Doe</td>
-		    <td>80</td>
-		  </tr>
+			$query = mysql_query("SELECT * FROM logs LIMIT 10 ORDER BY ID"); 
+			?>
+			
+			while ($row = mysql_fetch_array($query)) {
+			?>
+				<tr>
+					<td><?php echo $row['ID']?></td>
+					<td><?php echo $row['name']?></td>
+					<td><?php echo $row['cassusBelli']?></td>
+				</tr>
 		</table>
 		Hahahahaha
 		</p>
